@@ -1,0 +1,477 @@
+<!-- This is CSCI 571 Summer 2015 Homework 1-->
+<html>
+<head>
+<title>
+</title>
+<!-- JavaScript -->
+<script type="text/javascript" src="scripts/hw1.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="css/hw1.css" type="text/css" />
+</head>
+
+<body>
+<form>
+	<div id="formOneTitle" class="formTitle">
+	<!-- <div id="formOneTitle" class="formTitle" style="display:none;"> -->
+	<h2>Creat a New Pet's Information</h2>
+	<div>Create a profile for your pet. Use it for showing to other pets later.</div>
+	</div>
+
+    <!-- <div id="formTwoTitle" class="formTitle"> -->
+	<div id="formTwoTitle" class="formTitle" style="display:none;">
+	<h2>Define Friend Group for Your Pet</h2>
+	<div>Define a target friend group for this pet. We will help search friends for it later.</div>
+	</div>
+
+	<!-- <div id="reportOneTitle" class="formTitle"> -->
+	<div id="reportOneTitle" class="formTitle" style="display:none;">
+	<h2>Pets's List</h2>
+	<div>Here lists all your pets, choose one to view the detail information of them.</div>
+	</div>
+
+	<!-- <div id="reportTwoTitle" class="formTitle"> -->
+	<div id="reportTwoTitle" class="formTitle" style="display:none;">
+	<h2>Pet Detail Information</h2>
+	<div>Here shows all the detailed information of your pet.</div>
+	</div>
+
+    <!-- round square white container -->
+    <div class="container" id="formOne">
+	<!-- <div class="container" id="formOne" style="display:none;"> -->
+	<ul>
+	<li>
+		<lable id="formOneError" class="errorFiledLabel"></label>
+	</li>
+	<li>
+	    <label class="fieldLabel">Name</label></label>
+
+		<span>
+		<input id="firstName" size="8" required/>
+		<label>First</label><span class="req">*</span>
+		</span>
+
+		<span>
+		<input id="lastName" size="14" value="" required/>
+		<label>Last</label><span class="req">*</span>
+		</span>
+
+		<span>
+		<input id="suffix" size="3" value=""/>
+		<label>Suffix</label>
+		</span>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Gender</label><span class="req" style="position: absolute;top: 8px;right: 575px;">*</span>
+		<div>
+		<span><input id="Form1Male" name="f1g" class="radio" type="radio" value="Male" checked="checked" />
+		<label class="choice" for="Form1Male">Male</label></span>
+
+		<span><input id="Form1Female" name="f1g" class="radio" type="radio" value="Female"/>
+		<label class="choice" for="Form1Female">Female</label></span>
+
+		<span><input id="Form1UnknowGender" name="f1g" class="radio" type="radio" value="Unknown"/>
+		<label class="choice" for="Form1UnknowGender">Unknown</label></span>
+		</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Date of Birth</label>
+		<span>
+		<input id="month" size="2" type="text" maxlength="2" value=""/> /
+		<label>MM</label>
+		</span>
+
+		<span>
+		<input id="day" size="2" type="text" maxlength="2" value=""/> /
+		<label>DD</label>
+		</span>
+
+		<span>
+		<input id="year" size="4" type="text" maxlength="4" value=""/>
+		<label>YYYY</label>
+		</span>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Phone</label>
+		<span>
+		<input id="phone1" class="field text" type="text" size="3" maxlength="3" value=""/> -
+		<label>###</label>
+		</span>
+
+		<span>
+		<input id="phone2" class="field text" type="text" size="3" maxlength="3" value=""/> -
+		<label>###</label>
+		</span>
+
+		<span>
+		<input id="phone3" class="field text" type="text" size="4" maxlength="4" value=""/>
+		<label>####</label>
+		</span>
+	</li>
+
+	<li class="complex">
+	<label class="fieldLabel">Area</label>
+	<div>
+		<span class="left">
+		<select id="country" onChange="countrySelected()">
+        <option value="United States" selected="selected">United States</option>
+		<option value="China">China</option>
+		<option value="Mexico">Mexico</option>
+		<option value="Sweden">Sweden</option>
+		<option value="United Kingdom">United Kingdom</option>
+		</select>
+		<label>Country</label><span class="req">*</span>
+		</span>
+
+		<span class="left">
+		<select id="state"  onChange="stateSelected()">
+		<option value="" selected="selected">Please select...</option>
+        <option value="California" >California</option>
+		<option value="Washington">Washington</option>
+		<option value="Montana">Montana</option>
+		<option value="Utah">Utah</option>
+		<option value="Nevada">Nevada</option>
+		</select>
+		<label>State</label>
+		</span>
+        
+        <span class="left"> Or </span>
+		<span class="left">
+		<select id="city"  onChange="citySelected()">
+		<option value="" selected="selected">Please select...</option>
+        <option value="Los Angeles">Los Angeles</option>
+		<option value="San Diego">San Diego</option>
+		<option value="San Jose">San Jose</option>
+		<option value="San Francisco">San Francisco</option>
+		<option value="Sacramento">Sacramento</option>
+		</select>
+		<label>City</label>
+		</span>
+	</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Hobbies</label>
+		<div>
+		<span><input class="checkbox" type="checkbox" name="hobbies" value="Chacing balls" checked="checked" />
+		<label class="choice">Chacing balls</label></span>
+
+		<span><input class="checkbox" type="checkbox" name="hobbies" value="Swimming"/>
+		<label class="choice">Swimming</label></span>
+
+		<span><input class="checkbox" type="checkbox" name="hobbies" value="Singing"/>
+		<label class="choice">Singing</label></span>
+
+		<span><input class="checkbox" type="checkbox" name="hobbies" value="Dancing"/>
+		<label class="choice">Dancing</label></span>
+		</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Social Media</label><span class="req" style="position: absolute;top: 8px;right: 545px;">*</span>
+		<div>
+		<span><input name="F1SocialMedia" class="checkbox" type="checkbox" value="Facebook" checked="checked" />
+		<label class="choice">Facebook</label></span>
+
+		<span><input name="F1SocialMedia" class="checkbox" type="checkbox" value="Wechat"/>
+		<label class="choice">Wechat</label></span>
+
+		<span><input name="F1SocialMedia" class="checkbox" type="checkbox" value="Twitter"/>
+		<label class="choice">Twitter</label></span>
+
+		<span><input name="F1SocialMedia" class="checkbox" type="checkbox" value="RenRen"/>
+		<label class="choice">RenRen</label></span>
+		</div>
+	</li>
+
+    <li>
+	<label class="fieldLabel">Self Introduction</label>	
+	<textarea id="selfIntro" rows="10" cols="50" class="textarea"></textarea>
+	</li>
+
+	<li class="buttons">
+	<input style="float:left;" type="button" value="Go to Report Page" onClick="gotoReportOne(true)"/>
+	<input style="float:right;" type="button" value="Next" onClick="gotoFormTwo()"/>
+	</li>
+    </ul>
+    </div><!-- end of container -->
+
+    <!-- <div class="container" id="formTwo"> -->
+    <div class="container" id="formTwo" style="display:none;">
+    <ul>
+    <li>
+		<lable id="formOneError" class="errorFiledLabel"></label>
+	</li>
+    <li>
+	<label class="fieldLabel">Age Range</label>
+    	<span class="left">
+		<select id="ageRange">
+        <option value="from 1 to 5" selected="selected">from 1 to 5</option>
+		<option value="from 6 to 10">from 6 to 10</option>
+		<option value="from 11 to 15">from 11 to 15</option>
+		<option value="from 16 to 20">from 16 to 20</option>
+		<option value="from 21 to 25">from 21 to 25</option>
+		</select>
+		</span>
+    </li>
+
+    <li>
+	<label class="fieldLabel">Target Gender</label>
+		<div>
+		<span><input id="Form2Male" name="f2g" class="radio" type="radio" value="Male" checked="checked" />
+		<label class="choice" for="Form2Male">Male</label></span>
+
+		<span><input id="Form2Female" name="f2g" class="radio" type="radio" value="Female"/>
+		<label class="choice" for="Form2Female">Female</label></span>
+
+		<span><input id="Form2Both" name="f2g" class="radio" type="radio" value="Both"/>
+		<label class="choice" for="Form2Both">Both</label></span>
+		</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Target Hobbies</label>
+		<div>
+		<span><input name="targetHobbies" class="checkbox" type="checkbox" value="Chacing balls" checked="checked" />
+		<label class="choice">Chacing balls</label></span>
+
+		<span><input name="targetHobbies" class="checkbox" type="checkbox" value="Swimming"/>
+		<label class="choice">Swimming</label></span>
+
+		<span><input name="targetHobbies" class="checkbox" type="checkbox" value="Singing"/>
+		<label class="choice">Singing</label></span>
+
+		<span><input name="targetHobbies" class="checkbox" type="checkbox" value="Dancing"/>
+		<label class="choice">Dancing</label></span>
+		</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Through Which Social Media</label>
+		<div>
+		<span><input name="F2SocialMedia" class="checkbox" type="checkbox" value="Facebook" checked="checked" />
+		<label class="choice">Facebook</label></span>
+
+		<span><input name="F2SocialMedia" class="checkbox" type="checkbox" value="Wechat"/>
+		<label class="choice">Wechat</label></span>
+
+		<span><input name="F2SocialMedia" class="checkbox" type="checkbox" value="Twitter"/>
+		<label class="choice">Twitter</label></span>
+
+		<span><input name="F2SocialMedia" class="checkbox" type="checkbox" value="RenRen"/>
+		<label class="choice">RenRen</label></span>
+		</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Default Feeds</label>
+		<div>
+		<span><input id="feed1" name="feeds" class="radio" type="radio" value="Public" checked="checked" />
+		<label class="choice" for="feed1">Public</label></span>
+
+		<span><input id="feed2" name="feeds" class="radio" type="radio" value="Friends"/>
+		<label class="choice" for="feed2">Friends</label></span>
+
+		<span><input id="feed3" name="feeds" class="radio" type="radio" value="Private"/>
+		<label class="choice" for="feed3">Private</label></span>
+		</div>
+	</li>
+
+	<li>
+	<label class="fieldLabel">Membership</label>
+		<div>
+		<span><input name="ms" class="radio" type="radio" value="30 Days Free Trial" checked="checked" />
+		<label class="choice" for="membership1">30 Days Free Trial</label></span>
+
+		<span><input name="ms" class="radio" type="radio" value="$5.99 per month"/>
+		<label class="choice" for="membership2">$5.99 per month</label></span>
+
+		<span><input name="ms" class="radio" type="radio" value="$19.99 per year"/>
+		<label class="choice" for="membership3">$19.99 per year</label></span>
+		</div>
+	</li>
+
+    <li class="buttons">
+	<input style="float:left;" type="button" value="Go Back" onClick="gotoFormOne()"/>
+	<input style="float:right;" type="button" value="Create" onClick="gotoReportOne()"/>
+	<input style="float:right;margin-right:20px;" type="button" value="Go to Report Page Without Saving" onClick="gotoReportOne(true)"/>
+	</li>
+    </ul>
+    </div><!-- end of container -->    
+ 
+    <!-- <div class="container" id="reportOne"> -->
+    <div class="container" id="reportOne" style="display:none">
+    <ul>
+    <li>
+		<lable id="formOneError" class="errorFiledLabel"></label>
+	</li>
+    <li>
+	    <label class="fieldLabel">All Your Pets</label>
+	    <!-- <label class="noRecord"> There is no pet record.</label> -->
+
+    	<div id="reportListDiv">
+		<span  id="l1" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l1" checked="checked" />
+		<label id="l1Label" class="choice" for="l1"></label></span>
+
+		<span id="l2" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l2"/>
+		<label id="l2Label" class="choice" for="l2"></label></span>
+
+		<span id="l3" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l3"/>
+		<label id="l3Label" class="choice" for="l3"></label></span>
+
+		<span id="l4" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l4"/>
+		<label id="l4Label" class="choice" for="l4"></label></span>
+
+		<span id="l5" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l5"/>
+		<label id="l5Label" class="choice" for="l5"></label></span>
+
+		<span id="l6" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l6"/>
+		<label id="l6Label" class="choice" for="l5"></label></span>
+
+		<span id="l7" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l7"/>
+		<label id="l7Label" class="choice" for="l5"></label></span>
+
+		<span id="l8" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l8"/>
+		<label id="l8Label" class="choice" for="l5"></label></span>
+
+		<span id="l9" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l9"/>
+		<label id="l9Label" class="choice" for="l5"></label></span>
+
+		<span id="l10" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l10"/>
+		<label id="l10Label" class="choice" for="l5"></label></span>
+
+		<span id="l11" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l11"/>
+		<label id="l11Label" class="choice" for="l5"></label></span>
+
+		<span id="l12" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l12"/>
+		<label id="l12Label" class="choice" for="l5"></label></span>
+
+		<span id="l13" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l13"/>
+		<label id="l13Label" class="choice" for="l5"></label></span>
+
+		<span id="l14" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l14"/>
+		<label id="l14Label" class="choice" for="l5"></label></span>
+
+		<span id="l15" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l15"/>
+		<label id="l15Label" class="choice" for="l5"></label></span>
+
+		<span id="l16" style="width:90%;display:none;"><input name="reportList" class="radio" type="radio" value="l16"/>
+		<label id="l16Label" class="choice" for="l5"></label></span>
+		</div>
+    </li>
+
+    <li class="buttons">
+    <input style="float:left;" type="button" value="Create Another Pet" onClick="gotoFormOne(true)"/>
+	<input style="float:right;" type="button" value="View" onClick="gotoReportTwo()"/>
+	</li>
+    </ul>
+    </div><!-- end of container -->   
+
+    <!-- <div class="container" id="reportTwo"> -->
+    <div class="container" id="reportTwo" style="display:none;">
+    <ul>
+	<li>
+		<lable id="formOneError" class="errorFiledLabel"></label>
+	</li>
+	<li>
+	    <label class="fieldLabel">Name</label>
+		<span>
+		<label id="nameR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Gender</label>
+		<span>
+		<label id="genderR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Date of Birth</label>
+		<span>
+		<label id="bdayR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Phone</label>
+		<span>
+		<label id="phoneR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Area</label>
+		<span>
+		<label id="areaR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Hobbies</label>
+		<span>
+		<label id="hobbiesR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Social Media</label>
+		<span>
+		<label id="socialMediaR2"></label>
+		</span>
+	</li>
+    <li>
+	    <label class="fieldLabel">Self Introduction</label>
+		<span>
+		<label id="selfIntroR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Age Range</label>
+		<span>
+		<label id="ageRangeR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Target Gender</label>
+		<span>
+		<label id="targetGenderR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Target Hobbies</label>
+		<span>
+		<label id="targetHobbiesR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Through Which Social Media</label>
+		<span>
+		<label id="targetSMR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Default Feeds</label>
+		<span>
+		<label id="feedsR2"></label>
+		</span>
+	</li>
+	<li>
+	    <label class="fieldLabel">Membership</label>
+		<span>
+		<label id="msR2"></label>
+		</span>
+	</li>
+    <li class="buttons">
+    <input style="float:left;" type="button" value="Go to Create Pet Page" onClick="gotoFormOne(true)"/>
+	<input style="float:right;" type="button" value="View Another Pet" onClick="gotoReportOne(true)"/>
+	</li>
+    </ul>
+    </div><!-- end of container -->   
+</form>
+
+    <div style="width:640px;margin:20px auto 20px auto;">
+	<div id="imageOne"></div>
+	<div id="imageTwo"></div>
+	<div id="imageThree"></div>
+    </div>
+
+</body>
+</html>

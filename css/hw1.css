@@ -1,0 +1,183 @@
+html {
+    background-color: #d2e78f;
+}
+
+body {
+    margin: 17px 0 15px 0;
+    padding: 0;
+    text-align: center;
+    font-size: small;
+    font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif
+}
+
+.formTitle {
+    display: inline-block;
+    clear: both;
+    margin: 0 0 5px 0;
+    padding: 0 1% 1.1em 1%;
+    border-bottom: 1px dotted #ccc
+}
+
+.container {
+    background-image: url("../images/logo.jpeg"); 
+    background-size: 140px 80px;
+    background-position-x: 100%;
+    background-position-y: 2%;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 25px;
+    width: 640px;
+    /*height: 1200px;*/
+    margin: 20px auto 20px auto;
+}
+
+form ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+form li {
+    margin: 0;
+    padding: 6px 1% 9px 1%;
+    clear: both;
+    background-color: transparent;
+    position: relative;
+}
+
+form li span {
+    margin: 0 .3em 0 0;
+    padding: 10px;
+    float: left;
+    color: #444
+}
+
+form li span label {
+    margin: 0;
+    padding-top: 3px;
+    clear: both;
+    font-size: 85%;
+    line-height: 160%;
+    color: #444;
+    display: block;
+    text-align: left;
+}
+
+.fieldLabel {
+    font-size:95%;
+    font-family:inherit;
+    font-style:normal;
+    font-weight:bold;
+    color:#444444;
+    border-bottom: 1px dotted #ccc;
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.errorFiledLabel {
+    height:60px;
+    font-size:95%;
+    font-family:inherit;
+    font-style:normal;
+    font-weight:bold;
+    color:#FF0000;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+textarea.textarea{
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    font-size: 100%;
+    color: #333;
+    padding: 10px;
+    border-top: 1px solid #7c7c7c;
+    border-left: 1px solid #c3c3c3;
+    border-right: 1px solid #c3c3c3;
+    border-bottom: 1px solid #ddd;
+    background: #fff url(../images/fieldbg.gif) repeat-x top;
+    margin: 30px;
+    display: block;
+    text-align: left;
+}
+
+input.checkbox,
+input.radio {
+    display: block;
+    margin: 4px 0 0 0;
+    padding: 0;
+    width: 13px;
+    height: 13px
+}
+
+label.choice {
+    display: block;
+    cursor: pointer;
+    font-size: 100%;
+    line-height: 150%;
+    margin: -17px 0 0 23px;
+    padding: 0 0 5px 0;
+    color: #222;
+    width: 88%
+}
+
+.buttons {
+    padding: 10px;
+    margin: 50px 30px 30px 20px;
+    width: 90%;
+}
+
+#imageOne {
+    background: url("../images/icons.jpg") -5px -5px; 
+    background-size: 330px 330px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    margin: 52px;
+    float:left;
+}
+
+#imageTwo {
+    background: url("../images/icons.jpg") -220px -5px; 
+    background-size: 330px 330px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    margin: 52px;
+    float:left;
+}
+
+#imageThree {
+    background: url("../images/icons.jpg") -220px -115px; 
+    background-size: 330px 330px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    margin: 52px;
+    float:left;
+}
+
+form span.req {
+    display: inline;
+    color: red !important;
+    font-weight: bold;
+    margin: 0;
+    padding: 0
+}
+
+.noRecord {
+    height:60px;
+    font-size:95%;
+    font-family:inherit;
+    font-style:normal;
+    font-weight:bold;
+    color:#FF0000;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
