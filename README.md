@@ -1,5 +1,5 @@
 # USC---CSCI571---Homework1
-University of Southern California CSCI-571 Web Technologies Homework1
+University of Southern California CSCI-571 Web Technologies Summer 2015 Homework1
 
 Homework #1: Building dynamic client-side forms: HTML, JavaScript, DOM and CSS
 For the first homework, you are to have a valid link to the HTML page you create for this homework that is available through your Apache web server (that you will install as part of this assignment). You tell us what this link is through the text file that you submit along with your HTML page. The name of your home page is NOT to be index.html. You must change the default name to a different name. If we don't see your homework page through the link you tell us, you don't get the 5 points for a successful Apache install.
