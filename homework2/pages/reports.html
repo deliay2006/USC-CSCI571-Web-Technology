@@ -1,0 +1,153 @@
+<html>
+<head>
+    <link href="/css/hw2.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/hw2.js"></script>
+    <script>
+        $(document).ready(reportsPageReady);
+    </script>
+</head>
+
+<body>
+    <nav class="navigationBar">
+        <div class="container">
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a onClick="gotoProductReport()">Products Report</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoUserReport()">Employees Report</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoSaleReport()">Special Sales Report</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="pageContainer">
+        <header class="pageHeader">
+            <div id="viewProduct">
+            <h1 style="text-align:center;">View Products Report</h1>
+            <p>Use this page to view reports of our company's products.</p>
+            </div>
+
+            <div style="display:none;" id="viewEmployee">
+            <h1 style="text-align:center;">View Employees Report</h1>
+            <p>Use this page to view reports of our company's employees.</p>
+            </div>
+
+            <div style="display:none;" id="viewSale">
+            <h1 style="text-align:center;">View Special Sales Report</h1>
+            <p>Use this page to view reports of our company's special sales.</p>
+            </div>
+
+            <p><label id="errorMsg" class="errorMsg"></label></p>
+            <p><label id="infoMsg" class="infoMsg"></label></p>
+            
+            <!-- view employee report options-->
+            <div class="fillForm" id="productReport">
+            <form name="productReportForm" action="viewProducts.php" method="POST">
+            <p>
+            <label>Product Name:</label></p><p>
+            <input type="text" class="input" id="productName" name="productName" size="30"/>
+            </p>
+            <p>
+            <label>Category:</label></p><p>
+            <select class="input" id="categorySelect" name="categorySelect">
+            </select>
+            </p>
+            <p>
+            <label>Price Range From $:</label></p><p>
+            <input type="text" class="input" id="startSalary" name="startSalary" size="30"/>
+            </p>
+            <p>
+            <label>Price Range To $:</label></p><p>
+            <input type="text" class="input" id="toSalary" name="toSalary" size="30"/>
+            </p>
+            </form><!-- end of product report form-->
+            <p></p>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="viewProductReport()">View Products Report</a>
+            </p>
+            </div>
+            
+            <!-- view employee report options-->
+            <div class="fillForm" id="employeeReport" style="display:none;">
+            <form name="employeeReportForm" action="viewEmployees.php" method="POST">
+            <p>
+            <label>Employee Type:</label></p><p>
+            <select class="input" id="employeeType" name="employeeType">
+                <option value="3">Sales</option>
+                <option value="2">Manager</option>
+                <option value="1">Administrator</option>
+            </select>
+            </p>
+            <p>
+            <label>Salary Range From $:</label></p><p>
+            <input type="text" class="input" id="startSalary" name="startSalary" size="30"/>
+            </p>
+            <p>
+            <label>Salary Range To $:</label></p><p>
+            <input type="text" class="input" id="toSalary" name="toSalary" size="30"/>
+            </p>
+            </form><!-- end of employee report form-->
+            <p></p>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="viewEmployeeReport()">View Report</a>
+            </p>
+            </div>
+
+            <!-- view sales report options-->
+            <div class="fillForm" id="saleReport" style="display:none;">
+            <form name="saleReportForm" action="viewSales.php" method="POST">
+            <p>
+            <label>Product Name:</label></p><p>
+            <input type="text" class="input" id="productName" name="productName" size="30"/>
+            </p>
+            <p>
+            <label>Category:</label></p><p>
+            <select class="input" id="categorySelectForSale" name="categorySelectForSale">
+            </select>
+            </p>
+            <p>
+            <label>Price Range From $:</label></p><p>
+            <input type="text" class="input" id="startSalary" name="startSalary" size="30"/>
+            </p>
+            <p>
+            <label>Price Range To $:</label></p><p>
+            <input type="text" class="input" id="toSalary" name="toSalary" size="30"/>
+            </p>
+            <p>
+            <label>Special Sale Start Date (MM-DD-YYYY):</label></p><p>
+            <input type="text" class="input" id="startDate" name="startDate" size="30"/>
+            <input type="hidden" id="startdate" name="startdate"/>
+            </p>
+            <p></p>
+            <p>
+            <label>Special Sale End Date (MM-DD-YYYY):</label></p><p>
+            <input type="text" class="input" id="endDate" name="endDate" size="30"/>
+            <input type="hidden" id="enddate" name="enddate"/>
+            </p>
+            </form><!-- end of sale report form-->
+            
+            <p><a class="loginButton" style="margin-top:50px;" onClick="viewSaleReport()">View Sales Report</a>
+            </p>
+            </div>
+
+            <!-- result list page-->
+            <div id="searchResult" style="display:none;">
+            
+            <table id="searchResultRows" class="reportTable">
+            <tr><th>Product Id</th><th>Product Name</th><th>Category</th><th>Description</th><th>Price $</th></tr>
+
+            </table>
+
+            <div id="loadingInSearchResult" class="loading">Loading...</div>
+            </div>
+        </header>
+        <p style="text-align:center;">Copyright &copy; Delia's Chocolate Shop 2015</p>
+    </div>
+</body>
+
+</html>

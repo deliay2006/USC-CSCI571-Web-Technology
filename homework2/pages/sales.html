@@ -1,0 +1,126 @@
+<html>
+<head>
+    <link href="/css/hw2.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/hw2.js"></script>
+    <script>
+        $(document).ready(salesPageReady);
+    </script>
+</head>
+
+<body>
+    <nav class="navigationBar">
+        <div class="container">
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a onClick="gotoAddPage(3)">Add a Sale</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoEditPage(3)">Edit Sales</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoDelPage(3)">Delete Sales</a>
+                    </li>
+                    <li>
+                        <a href="http://cs-server.usc.edu:10211/pages/products.html">Manage Products</a>
+                    </li>
+                    <li>
+                        <a href="http://cs-server.usc.edu:10211/pages/categories.html">Manage Categories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="pageContainer">
+        <header class="pageHeader">
+            <div id="addPage">
+            <h1 style="text-align:center;">Add an Sale</h1>
+            <p>Use this page to add a new sale to our company.</p>
+            </div>
+
+            <div style="display:none;" id="editPage">
+            <h1 style="text-align:center;">Edit Sales</h1>
+            <p>Use this page to edit existing sales in our company.</p>
+            </div>
+
+            <div style="display:none;" id="delPage">
+            <h1 style="text-align:center;">Delete Sales</h1>
+            <p>Use this page to delete existing sales in our company.</p>
+            </div>
+
+            <p><label id="errorMsg" class="errorMsg"></label></p>
+            <p><label id="infoMsg" class="infoMsg"></label></p>
+            
+            <div class="fillForm" id="addForm">
+            <form name="addSaleForm" action="addSales.php" method="POST">
+            <input type="hidden" id="saleId" name="saleId"/>
+            <p>
+            <label>Sale Name:</label></p><p>
+            <input type="text" class="input" id="saleName" name="saleName" size="30"/>
+            </p><p>
+            <label>Description:</label></p><p>
+            <textarea class="input" style="height:inherit;" id="desc" name="desc" rows="10" cols="50"></textarea>
+            </p>
+            <p>
+            <label>Percentage:</label></p><p>
+            <input type="text" class="input" id="percentage" name="percentage" size="5"/>
+            <label>%</label>
+            </p>
+           
+            <p>
+            <label>Start Date(MM-DD-YYYY):</label></p><p>
+            <input type="text" class="input" id="startDate" name="startDate"/>
+            <input type="hidden" id="startdate" name="startdate"/>
+            </p>
+            <p>
+            <label>End Date(MM-DD-YYYY):</label></p><p>
+            <input type="text" class="input" id="endDate" name="endDate"/>
+            <input type="hidden" id="enddate" name="enddate"/>
+            </p>
+
+            <p>
+            <label>Apply on Products:</label></p><p>
+            <div class="applyProducts" id="applyProducts" name="applyProducts"></div>
+            </p>
+
+            </form>
+            <!-- end of add form-->
+
+            <p><a class="loginButton" id="addSaleButton" style="margin-top:50px;" onClick="addSale()">Add Sale</a>
+            </p>
+            <p></p>
+            <p><a class="loginButton" id="updateSaleButton" style="margin-top:50px; display:none;" onClick="updateSale()">Save</a>
+            </p>
+            </div>
+
+            <!-- list page-->
+            <div id="listForm" style="display:none;">
+            <div id="loading" class="loading">Loading...</div>
+            <div id="listSales" class="listCategories">
+
+            </div>
+            <p></p>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="editSale()">Edit Sale</a>
+            </p>
+            </div>
+
+            <!-- delete page-->
+            <div id="delForm" style="display:none;">
+            <div id="loadingInDel" class="loading">Loading...</div>
+            <form name="delSaleForm" action="deleteSales.php" method="POST">
+            <div id="delSales" class="delCategories">
+
+            </div>
+            </form>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="delSales()">Delete Sales</a>
+            </p>
+            </div>
+            
+        </header>
+        <p style="text-align:center;">Copyright &copy; Delia's Chocolate Shop 2015</p>
+    </div>
+</body>
+
+</html>

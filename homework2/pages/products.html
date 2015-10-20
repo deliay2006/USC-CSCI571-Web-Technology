@@ -1,0 +1,113 @@
+<html>
+<head>
+    <link href="/css/hw2.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/hw2.js"></script>
+    <script>
+        $(document).ready(productPageReady);
+    </script>
+</head>
+
+<body>
+    <nav class="navigationBar">
+        <div class="container">
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a onClick="gotoAddPage(2)">Add a Product</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoEditPage(2)">Edit Products</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoDelPage(2)">Delete Products</a>
+                    </li>
+                    <li>
+                        <a href="http://cs-server.usc.edu:10211/pages/categories.html">Manage Categories</a>
+                    </li>
+                    <li>
+                        <a href="http://cs-server.usc.edu:10211/pages/sales.html">Manage Sales</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="pageContainer">
+        <header class="pageHeader">
+            <div id="addPage">
+            <h1 style="text-align:center;">Add an Product</h1>
+            <p>Use this page to add a new product to our company.</p>
+            </div>
+
+            <div style="display:none;" id="editPage">
+            <h1 style="text-align:center;">Edit Products</h1>
+            <p>Use this page to edit existing products in our company.</p>
+            </div>
+
+            <div style="display:none;" id="delPage">
+            <h1 style="text-align:center;">Delete Products</h1>
+            <p>Use this page to delete existing products in our company.</p>
+            </div>
+
+            <p><label id="errorMsg" class="errorMsg"></label></p>
+            <p><label id="infoMsg" class="infoMsg"></label></p>
+            
+            <div class="fillForm" id="addForm">
+            <form name="addProductForm" action="addProducts.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" id="productId" name="productId"/>
+            <p>
+            <label>Product Name:</label></p><p>
+            <input type="text" class="input" id="productName" name="productName" size="30"/>
+            </p><p>
+            <label>Description:</label></p><p>
+            <textarea class="input" style="height:inherit;" id="desc" name="desc" rows="10" cols="50"></textarea>
+            </p><p>
+            <label>Category:</label></p><p>
+            <select class="input" id="categorySelect" name="categorySelect">
+            </select>
+            </p><p>
+            <label>Price $:</label></p><p>
+            <input type="number" class="input" id="price" name="price" min="0" max="100000000"/>
+            </p><p>
+            <label>Product Photo:</label></p><p>
+            <input type="file" class="file" id="fileToUpload" name="fileToUpload"/>
+            </p>
+            </form>
+            <p></p>
+            <p><a class="loginButton" id="addProductButton" style="margin-top:50px;" onClick="addProduct()">Add Product</a>
+            </p>
+            <p></p>
+            <p><a class="loginButton" id="updateProductButton" style="margin-top:50px; display:none;" onClick="updateProduct()">Save</a>
+            </p>
+            </div>
+
+            <!-- list page-->
+            <div id="listForm" style="display:none;">
+            <div id="loading" class="loading">Loading...</div>
+            <div id="listProducts" class="listCategories">
+
+            </div>
+            <p></p>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="editProduct()">Edit Product</a>
+            </p>
+            </div>
+
+            <!-- delete page-->
+            <div id="delForm" style="display:none;">
+            <div id="loadingInDel" class="loading">Loading...</div>
+            <form name="delProductForm" action="deleteProducts.php" method="POST">
+            <div id="delProducts" class="delCategories">
+
+            </div>
+            </form>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="delProducts()">Delete Products</a>
+            </p>
+            </div>
+            
+        </header>
+        <p style="text-align:center;">Copyright &copy; Delia's Chocolate Shop 2015</p>
+    </div>
+</body>
+
+</html>

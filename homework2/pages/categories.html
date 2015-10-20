@@ -1,0 +1,104 @@
+<html>
+<head>
+    <link href="/css/hw2.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/hw2.js"></script>
+    <script>
+        $(document).ready(categoryPageReady);
+    </script>
+</head>
+
+<body>
+    <nav class="navigationBar">
+        <div class="container">
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a onClick="gotoAddPage(1)">Add a Category</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoEditPage(1)">Edit Categories</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoDelPage(1)">Delete Categories</a>
+                    </li>
+                    <li>
+                        <a href="http://cs-server.usc.edu:10211/pages/products.html">Manage Products</a>
+                    </li>
+                    <li>
+                        <a href="http://cs-server.usc.edu:10211/pages/sales.html">Manage Sales</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="pageContainer">
+        <header class="pageHeader">
+            <div id="addPage">
+            <h1 style="text-align:center;">Add an Category</h1>
+            <p>Use this page to add a new category to our company.</p>
+            </div>
+
+            <div style="display:none;" id="editPage">
+            <h1 style="text-align:center;">Edit Categories</h1>
+            <p>Use this page to edit existing categories in our company.</p>
+            </div>
+
+            <div style="display:none;" id="delPage">
+            <h1 style="text-align:center;">Delete Categories</h1>
+            <p>Use this page to delete existing categories in our company.</p>
+            </div>
+
+            <p><label id="errorMsg" class="errorMsg"></label></p>
+            <p><label id="infoMsg" class="infoMsg"></label></p>
+            
+            <div class="fillForm" id="addForm">
+            <form name="addCategoryForm" action="addCategories.php" method="POST">
+            <input type="hidden" id="categoryId" name="categoryId"/>
+            <p>
+            <label>Category Name:</label></p><p>
+            <input type="text" class="input" id="categoryName" name="categoryName" size="30"/>
+            </p><p>
+            <label>Description:</label></p><p>
+            <textarea class="input" style="height:inherit;" id="desc" name="desc" rows="10" cols="50"></textarea>
+            </p>
+            </form>
+            <p></p>
+            <p><a class="loginButton" id="addCategoryButton" style="margin-top:50px;" onClick="addCategory()">Add Category</a>
+            </p>
+            <p></p>
+            <p><a class="loginButton" id="updateCategoryButton" style="margin-top:50px; display:none;" onClick="updateCategory()">Save</a>
+            </p>
+            </div>
+
+            <!-- list page-->
+            <div id="listForm" style="display:none;">
+            <div id="loading" class="loading">Loading...</div>
+            <div id="listCategories" class="listCategories">
+
+            </div>
+            <p></p>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="editCategory()">Edit Category</a>
+            </p>
+            </div>
+
+            <!-- delete page-->
+            <div id="delForm" style="display:none;">
+            <div id="loadingInDel" class="loading">Loading...</div>
+            <form name="delCategoryForm" action="deleteCategories.php" method="POST">
+            <div id="delCategories" class="delCategories">
+
+            </div>
+            </form>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="delCategories()">Delete Categories</a>
+            </p>
+            </div>
+            
+        </header>
+        <p style="text-align:center;">Copyright &copy; Delia's Chocolate Shop 2015</p>
+    </div>
+</body>
+
+</html>

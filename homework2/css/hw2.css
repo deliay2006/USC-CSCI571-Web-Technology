@@ -1,0 +1,169 @@
+html {
+  font-family: sans-serif;
+    font-size: 10px;
+}
+
+body {
+  margin: 0;
+    padding-top: 70px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.navigationBar {
+    background-color: #222;
+  top: 0;
+    position: fixed;
+  right: 0;
+  left: 0;
+  height: 70px;
+}
+
+.navigationHome {
+      margin-left: -15px;
+      color: #9d9d9d;
+      float: left;
+      height: 50px;
+      padding: 15px 15px;
+      font-size: 18px;
+      line-height: 20px;
+      text-decoration: none;
+      background-color: transparent;
+}
+
+.navigation {
+    color: #9d9d9d;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+      list-style: none;
+}
+
+.navigation li {
+    float: left;
+    padding-left: 20px;
+}
+
+.navigation li a {
+    color: #9d9d9d;
+    text-decoration: none;
+}
+
+.navigationHome:hover,
+.navigation li a:hover {
+    color: #fff;
+    background-color: transparent
+}
+
+.container {
+  width: 750px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.loginButton {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+  width:200px;
+}
+
+.pageHeader {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+  border-radius: 6px;
+  margin-top: 50px;
+}
+
+.pageHeader label,
+.pageHeader p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.input {
+    border-radius: 4px;
+    height:35px;
+    border: 1px solid #ccc;
+}
+
+.errorMsg {
+  color:red;
+}
+
+.infoMsg {
+  color:green;
+}
+
+.fillForm {
+    display: inline-block;
+}
+
+.fillForm p {
+  width: 40%;
+  float:left;
+  display:inline-block;
+}
+
+.select input,
+.select label,
+.radio input,
+.radio label {
+  font-size: 17px;
+  margin-right: 12px;
+}
+
+.loading {
+      text-align: center;
+  font-size: 20px;
+  color: black;
+}
+
+.listCategories p,
+.delCategories p,
+.delEmployees p,
+.listEmployees p{
+  margin-bottom: 15px;
+  font-size: 18px;
+    text-align: left;
+  margin-left: 100px;
+}
+
+.applyProducts {
+  float: left;
+  text-align: left;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.applyProducts div {
+  float: left;
+  margin: 10px;
+}
+
+.reportTable {
+    width: 100%;
+}
+
+.reportTable th,
+.reportTable td {
+  border: #bbb solid 1px;
+}
+
+.file {
+  border: none;
+  height: 35px;
+  margin: 10px;
+}

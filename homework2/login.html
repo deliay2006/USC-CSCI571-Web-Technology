@@ -1,0 +1,48 @@
+<html>
+<head>
+    <link href="css/hw2.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="scripts/hw2.js"></script>
+</head>
+
+<body>
+    <nav class="navigationBar">
+        <div class="container">
+            <div>
+                <a class="navigationHome" href="#">Home</a>
+            </div>
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="pageContainer">
+    <form name="loginForm" action="login.php" method="POST">
+        <header class="pageHeader">
+            <h1 style="text-align:center;">A Warm Welcome!</h1>
+            <p>Welcome to Delia's chocolate shop. Here we have all kinds of chocolates from different countires and different brands.</p>
+           
+            <p>
+            <label>Username:</label>
+            <input type="text" class="input" id="username" name="username" size="30"/>
+        </p><p>
+            <label>Password:</label>
+            <input type="password" class="input" id="password" name="password" size="30"/>
+            </p>
+            <p><label id="errorMsg" class="errorMsg"></label></p>
+            <p><label id="loading" style="display:none;">Loading...</label></p>
+            <p><a class="loginButton" onClick="login()">Login</a>
+            </p>
+        </header>
+
+        <p style="text-align:center;">Copyright &copy; Delia's Chocolate Shop 2015</p>
+    </form>
+    </div>
+</body>
+
+</html>

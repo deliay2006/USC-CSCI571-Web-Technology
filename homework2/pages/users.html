@@ -1,0 +1,119 @@
+<html>
+<head>
+    <link href="/css/hw2.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/hw2.js"></script>
+    <script>
+        $(document).ready(usersPageReady);
+    </script>
+</head>
+
+<body>
+    <nav class="navigationBar">
+        <div class="container">
+            <div>
+                <ul class="navigation">
+                    <li>
+                        <a onClick="gotoAddPage()">Add an Emploee</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoEditPage()">Edit Employees</a>
+                    </li>
+                    <li>
+                        <a onClick="gotoDelPage()">Delete Employees</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="pageContainer">
+        <header class="pageHeader">
+            <div id="addPage">
+            <h1 style="text-align:center;">Add an Emploee</h1>
+            <p>Use this page to add a new employee to our company.</p>
+            </div>
+
+            <div style="display:none;" id="editPage">
+            <h1 style="text-align:center;">Edit Emploees</h1>
+            <p>Use this page to edit existing employees in our company.</p>
+            </div>
+
+            <div style="display:none;" id="delPage">
+            <h1 style="text-align:center;">Delete Emploees</h1>
+            <p>Use this page to delete existing employees in our company.</p>
+            </div>
+
+            <p><label id="errorMsg" class="errorMsg"></label></p>
+            <p><label id="infoMsg" class="infoMsg"></label></p>
+            
+            <div class="fillForm" id="addForm">
+            <form name="addUserForm" action="addUser.php" method="POST">
+            <input type="hidden" id="userId" name="userId"/>
+            <p>
+            <label>Username:</label></p><p>
+            <input type="text" class="input" id="username" name="username" size="30"/>
+            </p><p>
+            <label>Password:</label></p><p>
+            <input type="text" class="input" id="password" name="password" size="30"/>
+            </p><p>
+            <label>First Name:</label></p><p>
+            <input type="text" class="input" id="firstname" name="firstname" size="30"/>
+            </p><p>
+            <label>Last Name:</label></p><p>
+            <input type="text" class="input" id="lastname" name="lastname" size="30"/>
+            </p><p>
+            <label>Age:</label></p><p>
+            <input type="number" class="input" id="age" name="age" min="10" max="100"/>
+            </p><p>
+            <label>Gender:</label></p><p class="radio" >
+            <input type="radio" name="gender" id="male" value="male" checked/><label>Male</label>
+            <input type="radio" name="gender" id="female" value="female"/><label>Female</label>
+            </p><p>
+            <label>Employee Type:</label></p><p class="select" style="width:60%;">
+            <input type="radio" name="type" id="sales" value="sales" checked/><label>Salesman</label>
+            <input type="radio" name="type" id="manager" value="manager"/><label>Manager</label>
+            <input type="radio" name="type" id="admin" value="admin"/><label>Admnistrator</label>
+            </p><p>
+            <label>Salary(per Year) $:</label>
+            </p><p>
+            <input type="number" class="input" id="salary" name="salary" min="1000" max="100000000"/>
+            </p>
+            </form>
+            <p></p>
+            <p><a class="loginButton" id="addUserButton" style="margin-top:50px;" onClick="addEmployee()">Add Employee</a>
+            </p>
+            <p></p>
+            <p><a class="loginButton" id="updateUserButton" style="margin-top:50px; display:none;" onClick="updateEmployee()">Save</a>
+            </p>
+            </div>
+
+            <!-- list page-->
+            <div id="listForm" style="display:none;">
+            <div id="loading" class="loading">Loading...</div>
+            <div id="listEmployees" class="listEmployees">
+
+            </div>
+            <p></p>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="editEmployee()">Edit Employee</a>
+            </p>
+            </div>
+
+            <!-- delete page-->
+            <div id="delForm" style="display:none;">
+            <div id="loadingInDel" class="loading">Loading...</div>
+            <form name="delUserForm" action="deleteUsers.php" method="POST">
+            <div id="delEmployees" class="delEmployees">
+
+            </div>
+            </form>
+            <p><a class="loginButton" style="margin-top:50px;" onClick="delEmployee()">Delete Employees</a>
+            </p>
+            </div>
+            
+        </header>
+        <p style="text-align:center;">Copyright &copy; Delia's Chocolate Shop 2015</p>
+    </div>
+</body>
+
+</html>
